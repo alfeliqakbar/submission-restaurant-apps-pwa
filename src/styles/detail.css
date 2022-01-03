@@ -1,0 +1,22 @@
+.restaurant {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant .restaurant__poster {
+  width: 100%;
+  /* max-width: 400px; */
+}
+
+.restaurant .restaurant__title {
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.restaurant .restaurant__info h4 {
+  margin: 8px 0;
+}
