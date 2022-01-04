@@ -7,7 +7,7 @@ describe('Showing all favorite movies', () => {
 
   const renderTemplate = () => {
     view = new FavoriteRestaurantSearchView();
-    document.body.innerHTML = view.getFavoriteRestaurantTemplate();
+    document.body.innerHTML = view.getTemplate();
   };
 
   beforeEach(() => {
@@ -47,7 +47,7 @@ describe('Showing all favorite movies', () => {
   describe('When favorite movies exist', () => {
     it('should show the movies', (done) => {
       document.getElementById('movies').addEventListener('movies:updated', () => {
-        expect(document.querySelectorAll('.movie-item').length).toEqual(2);
+        expect(document.querySelectorAll('.menu-item').length).toEqual(2);
         done();
       });
 

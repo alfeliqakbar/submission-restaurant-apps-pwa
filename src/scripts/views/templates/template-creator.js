@@ -23,10 +23,10 @@ const createRestaurantItemTemplate = (restaurant) => `
 <article class="menu-item">
 <img class="menu-item-img" src="${
   CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId
-}" alt="${restaurant.name}">
+}" alt="${restaurant.name || '-'}">
 <div class="menu-item-content">
-  <p class="menu-item-rating">Rating: ${restaurant.rating}</p>
-  <h1 class="menu-item-title"><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h1>
+  <p class="menu-item-rating">Rating: ${restaurant.rating || '-'}</p>
+  <h1 class="menu-item-title"><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name || '-'}</a></h1>
   <p class="menu-item-description">${restaurant.description}</p>
 </div>
 </article>
