@@ -21,9 +21,13 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantItemTemplate = (restaurant) => `
 <article class="menu-item">
-<img class="menu-item-img" src="${
-  CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId
-}" alt="${restaurant.name || '-'}">
+<picture>
+  <source type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
+  <source type="image/jpeg" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
+  <img class="menu-item-img lazyload" src="${
+    CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId
+  }" alt="${restaurant.name || '-'}">
+</picture>
 <div class="menu-item-content">
   <p class="menu-item-rating">Rating: ${restaurant.rating || '-'}</p>
   <h1 class="menu-item-title"><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name || '-'}</a></h1>
@@ -34,7 +38,11 @@ const createRestaurantItemTemplate = (restaurant) => `
 
 const createRestaurantDetailTemplate = (restaurant) => `
 <h2 class="restaurant__title">${restaurant.name}</h2>
-<img class="restaurant__poster" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="${restaurant.name}" />
+<picture>
+  <source type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}">
+  <source type="image/jpeg" srcset="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}">
+  <img class="restaurant__poster lazyload" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="${restaurant.name}" />
+</picture>
 <div class="restaurant__info">
   <h3>Information</h3>
   <h4>Address</h4>
