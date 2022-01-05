@@ -8,7 +8,7 @@ const view = new FavoriteRestaurantSearchView();
 
 const Favorite = {
   async render() {
-    view.getTemplate()
+    return view.getTemplate()
     // return `
     // <section id="maincontent" class="menu">
     // <h2 class="menu-title">Favorite Restaurant</h1>

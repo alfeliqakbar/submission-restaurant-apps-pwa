@@ -3,12 +3,13 @@ import { createRestaurantItemTemplate } from '../../templates/template-creator'
 class FavoriteRestaurantSearchView {
   getTemplate() {
     return `
-        <div class="content">
+        <div id="maincontent" class="menu content">
         <input id="query" type="text">
-        <h2 class="content__heading">Your Liked Movie</h2>
-            <div id="movies" class="movies">
-                      
-            </div>
+        <h2 class="content__heading menu-title">Favorite Restaurant</h2>
+        <hr>
+          <div id="movies" class="movies menu-list">
+            
+          </div>
         </div>
         `;
   }
@@ -21,7 +22,7 @@ class FavoriteRestaurantSearchView {
   }
 
   showRestaurant(restaurant) {
-    this.showFavoriteMovies(movies)
+    this.showFavoriteRestaurant(restaurant)
   }
 
   showFavoriteRestaurant(restaurant =  []){
@@ -29,7 +30,7 @@ class FavoriteRestaurantSearchView {
     if (restaurant.length) {
       html = restaurant.reduce((carry, restaurant) => carry.concat(createRestaurantItemTemplate(restaurant)), '')
     }else{
-      html = this._getEmptyMovieTemplate();
+      html = this._getEmptyRestaurantTemplate();
     }
 
     document.getElementById('movies').innerHTML = html;
@@ -37,7 +38,7 @@ class FavoriteRestaurantSearchView {
     document.getElementById('movies').dispatchEvent(new Event('movies:updated'));
   }
 
-  _getEmptyMovieTemplate() {
+  _getEmptyRestaurantTemplate() {
     return '<div class="movie-item__not__found movies__not__found">Tidak ada film untuk ditampilkan</div>';
   }
 }
