@@ -2,7 +2,7 @@
 Jika ukuran viewport width < 1200px, maka hero element ditampilkan full-width. */
 
 .jumbotron{
-  background: url("../public/images/heros/hero-image_2.jpg") no-repeat;
+  background: url("/images/heros/hero-image_2.jpg") no-repeat;
   background-position: center;
   width: 100%;
   min-height: 400px;
@@ -27,4 +27,30 @@ Jika ukuran viewport width < 1200px, maka hero element ditampilkan full-width. *
 .hero-desc{
   color: rgb(252, 240, 200);
   font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+  .jumbotron{
+    background: url("/images/hero-image_2-large.jpg") no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .jumbotron{
+    background: url("/images/hero-image_2-small.jpg") no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
 }

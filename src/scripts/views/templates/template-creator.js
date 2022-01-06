@@ -1,30 +1,11 @@
 import CONFIG from '../../globals/config';
 
-// fungsi manggil array review
-// const reviews = (param) => {
-//   const reviewList = document.querySelector('.restaurant__reviews');
-//   param.customerReviews.forEach((data) => {
-//     const { name, date, review } = data;
-
-//     const reviewItem = document.createElement('div');
-//     reviewItem.setAttribute('class', 'review__item');
-
-//     reviewItem.innerHTML = `
-//     <p>${name}</p>
-//     <p>${date}</p>
-//     <p>${review}</p>
-//     `;
-
-//     reviewList.appendChild(reviewItem);
-//   });
-// };
-
 const createRestaurantItemTemplate = (restaurant) => `
 <article class="menu-item">
 <picture>
-  <source type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
-  <source type="image/jpeg" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
-  <img class="menu-item-img lazyload" src="${
+  <source type="image/webp" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
+  <source type="image/jpeg" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
+  <img class="menu-item-img lazyload" data-src="${
     CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId
   }" alt="${restaurant.name || '-'}">
 </picture>
@@ -39,9 +20,9 @@ const createRestaurantItemTemplate = (restaurant) => `
 const createRestaurantDetailTemplate = (restaurant) => `
 <h2 class="restaurant__title">${restaurant.name}</h2>
 <picture>
-  <source type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}">
-  <source type="image/jpeg" srcset="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}">
-  <img class="restaurant__poster lazyload" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="${restaurant.name}" />
+  <source type="image/webp" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}">
+  <source type="image/jpeg" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}">
+  <img class="restaurant__poster lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="${restaurant.name}" />
 </picture>
 <div class="restaurant__info">
   <h3>Information</h3>
@@ -79,13 +60,13 @@ ${restaurant.customerReviews.map((data) => `
 `;
 
 const createLikeRestaurantButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+  <button aria-label="like this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createUnlikeRestaurantButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;

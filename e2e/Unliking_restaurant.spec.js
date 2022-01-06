@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-Feature('Liking restaurant');
+Feature('Unliking restaurant');
 
 Before(({I}) => {
   I.amOnPage('/#/favorite');
@@ -8,7 +8,6 @@ Before(({I}) => {
 
 Scenario('showing empty liked restaurant', ({I}) => {
   I.seeElement('#query');
-  //I.seeElement('.query'); // membuat test menjadi gagal
   I.see('Tidak ada film untuk ditampilkan', '.movie-item__not__found');
 });
 

@@ -4,7 +4,7 @@ class FavoriteRestaurantSearchView {
   getTemplate() {
     return `
         <div id="maincontent" class="menu content">
-        <input id="query" type="text">
+        <input id="query" type="text" style="height: 44px;">
         <h2 class="content__heading menu-title">Favorite Restaurant</h2>
         <hr>
           <div id="movies" class="movies menu-list">

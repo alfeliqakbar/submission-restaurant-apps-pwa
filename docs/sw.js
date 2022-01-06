@@ -1,6 +1,5 @@
 var serviceWorkerOption = {
   "assets": [
-    "/bd6b63650298f334a08b66446d66c536.jpg",
     "/0.bundle.js",
     "/1.bundle.js",
     "/bundle.js",
