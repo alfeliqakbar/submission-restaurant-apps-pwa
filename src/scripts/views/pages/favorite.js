@@ -7,17 +7,12 @@ const view = new FavoriteRestaurantSearchView();
 
 const Favorite = {
   async render() {
-    return view.getTemplate()
+    return view.getTemplate();
   },
 
   async afterRender() {
     new FavoriteRestaurantShowPresenter({ view, favoriteRestaurant: FavoriteRestaurantIdb });
     new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurant: FavoriteRestaurantIdb });
-    // const restaurant = await FavoriteRestaurantIdb.getAllRestaurant();
-    // const restaurantContainer = document.querySelector('.menu-list');
-    // restaurant.forEach((data) => {
-    //   restaurantContainer.innerHTML += createRestaurantItemTemplate(data);
-    // });
   },
 };
 

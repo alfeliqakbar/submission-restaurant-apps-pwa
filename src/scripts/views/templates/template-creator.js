@@ -6,8 +6,8 @@ const createRestaurantItemTemplate = (restaurant) => `
   <source type="image/webp" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
   <source type="image/jpeg" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
   <img class="menu-item-img lazyload" data-src="${
-    CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId
-  }" alt="${restaurant.name || '-'}">
+  CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId
+}" alt="${restaurant.name || '-'}">
 </picture>
 <div class="menu-item-content">
   <p class="menu-item-rating">Rating: ${restaurant.rating || '-'}</p>

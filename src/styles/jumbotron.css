@@ -2,7 +2,7 @@
 Jika ukuran viewport width < 1200px, maka hero element ditampilkan full-width. */
 
 .jumbotron{
-  background: url("/images/heros/hero-image_2.jpg") no-repeat;
+  background: url("/images/hero-image_2.webp") no-repeat;
   background-position: center;
   width: 100%;
   min-height: 400px;

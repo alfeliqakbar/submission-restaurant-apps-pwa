@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 
 module.exports = {
@@ -53,9 +53,9 @@ module.exports = {
         {
           test: /\.(jpe?g|png)/,
           options: {
-            quality: 50
-          }
-        }
+            quality: 50,
+          },
+        },
       ],
       overrideExtension: true,
     }),
@@ -74,14 +74,14 @@ module.exports = {
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
+          priority: -10,
         },
         default: {
           minChunks: 2,
           priority: -20,
-          reuseExistingChunk: true
-        }
-      }
-    }
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
 };

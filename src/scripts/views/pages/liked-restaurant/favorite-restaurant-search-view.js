@@ -1,4 +1,4 @@
-import { createRestaurantItemTemplate } from '../../templates/template-creator'
+import { createRestaurantItemTemplate } from '../../templates/template-creator';
 
 class FavoriteRestaurantSearchView {
   getTemplate() {
@@ -14,22 +14,21 @@ class FavoriteRestaurantSearchView {
         `;
   }
 
-
   runWhenUserIsSearching(callback) {
-    document.getElementById("query").addEventListener("change", (event) => {
+    document.getElementById('query').addEventListener('change', (event) => {
       callback(event.target.value);
     });
   }
 
   showRestaurant(restaurant) {
-    this.showFavoriteRestaurant(restaurant)
+    this.showFavoriteRestaurant(restaurant);
   }
 
-  showFavoriteRestaurant(restaurant =  []){
+  showFavoriteRestaurant(restaurant = []) {
     let html;
     if (restaurant.length) {
-      html = restaurant.reduce((carry, restaurant) => carry.concat(createRestaurantItemTemplate(restaurant)), '')
-    }else{
+      html = restaurant.reduce((carry, restaurants) => carry.concat(createRestaurantItemTemplate(restaurants)), '');
+    } else {
       html = this._getEmptyRestaurantTemplate();
     }
 
