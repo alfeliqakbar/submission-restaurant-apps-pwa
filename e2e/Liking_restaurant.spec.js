@@ -2,21 +2,21 @@ const assert = require('assert');
 
 Feature('Liking restaurant');
 
-Before(({I}) => {
+Before(({ I }) => {
   I.amOnPage('/#/favorite');
 });
 
-Scenario('showing empty liked restaurant', ({I}) => {
+Scenario('showing empty liked restaurant', ({ I }) => {
   I.seeElement('#query');
-  //I.seeElement('.query'); // membuat test menjadi gagal
+  // I.seeElement('.query'); // membuat test menjadi gagal
   I.see('Tidak ada film untuk ditampilkan', '.movie-item__not__found');
 });
 
-Scenario('liking one restaurant', async ({I}) => {
+Scenario('liking one restaurant', async ({ I }) => {
   I.see('Tidak ada film untuk ditampilkan', '.movie-item__not__found');
 
   I.amOnPage('/');
-  
+
   I.seeElement('.menu-item-title a');
   const firstRestaurant = locate('.menu-item-title a').first();
   const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);

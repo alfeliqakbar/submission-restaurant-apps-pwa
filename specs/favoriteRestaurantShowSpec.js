@@ -1,6 +1,6 @@
-import FavoriteRestaurantSearchView from "../src/scripts/views/pages/liked-restaurant/favorite-restaurant-search-view";
-import FavoriteRestaurantShowPresenter from "../src/scripts/views/pages/liked-restaurant/favorite-restaurant-show-presenter";
-import FavoriteRestaurantIdb from "../src/scripts/data/favoriterestaurant-idb";
+import FavoriteRestaurantSearchView from '../src/scripts/views/pages/liked-restaurant/favorite-restaurant-search-view';
+import FavoriteRestaurantShowPresenter from '../src/scripts/views/pages/liked-restaurant/favorite-restaurant-show-presenter';
+import FavoriteRestaurantIdb from '../src/scripts/data/favoriterestaurant-idb';
 
 describe('Showing all favorite movies', () => {
   let view;
